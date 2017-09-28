@@ -26,5 +26,21 @@ public class Calendario {
     private ArrayList<Ano> anos;
     public static int contadorDias;
 
+    public Ano getAno(int numeroAno){
+        boolean flag = false;
+        for (int i = 0; i < anos.size(); i++) {
+            if (anos.get(i).getAno() == numeroAno){
+                return anos.get(i);
+            }else{
+                flag = true;
+            }
+        }
+        if (flag){
+            System.out.println("Ano inválido!");
+            return null;
+        }
+        return null;
+    }
+
 
 }

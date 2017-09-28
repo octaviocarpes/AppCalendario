@@ -5,19 +5,20 @@ public class Ano {
     private Mes[] meses;
 
     public Ano(int ano) {
+        meses = new Mes[12];
         this.ano = ano;
-        meses[0] = new Mes("Janeiro");
-        meses[1] = new Mes("Fevereiro");
-        meses[2] = new Mes("Março");
-        meses[3] = new Mes("Abril");
-        meses[4] = new Mes("Maio");
-        meses[5] = new Mes("Junho");
-        meses[6] = new Mes("Julho");
-        meses[7] = new Mes("Agosto");
-        meses[8] = new Mes("Setembro");
-        meses[9] = new Mes("Outubro");
-        meses[10] = new Mes("Novembro");
-        meses[11] = new Mes("Dezembro");
+        meses[0] = new Mes("Janeiro",ano);
+        meses[1] = new Mes("Fevereiro",ano);
+        meses[2] = new Mes("Março",ano);
+        meses[3] = new Mes("Abril",ano);
+        meses[4] = new Mes("Maio",ano);
+        meses[5] = new Mes("Junho",ano);
+        meses[6] = new Mes("Julho",ano);
+        meses[7] = new Mes("Agosto",ano);
+        meses[8] = new Mes("Setembro",ano);
+        meses[9] = new Mes("Outubro",ano);
+        meses[10] = new Mes("Novembro",ano);
+        meses[11] = new Mes("Dezembro",ano);
     }
 
     public int getAno() {

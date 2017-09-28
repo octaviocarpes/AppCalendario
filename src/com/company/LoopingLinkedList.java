@@ -27,28 +27,32 @@ public class LoopingLinkedList<E> {
 
     public LoopingLinkedList() {
         size = 0;
-        head = new Node(null);
-        head.setInitial();
-        pointer = new Node(null);
     }
 
     public void add(E element){
-        if (head.element == null){
-            head.element = element;
-            head.next = pointer;
+        if (head == null){
+            head = new Node(element);
+            head.setInitial();
+            head.next = head;
             pointer = head;
             size++;
+            return;
         }
 
         if (size == 1){
             Node aux = new Node(element);
+            head.next = null;
             head.next = aux;
             pointer = head.next;
             pointer.next = head;
             size++;
+            return;
         }
         Node aux = new Node(element);
-        
+        pointer.next = aux;
+        pointer = aux;
+        pointer.next = head;
+        size++;
     }
 
     public void setPointer(E element){
@@ -56,5 +60,26 @@ public class LoopingLinkedList<E> {
         while(pointer.element != element){
             pointer = pointer.next;
         }
+    }
+
+    public E getNext(){
+        pointer = pointer.next;
+        return pointer.element;
+    }
+
+    public int size(){
+        return size;
+    }
+
+
+    public String toString() {
+
+        System.out.println("LoopingLinkedList:\n\n" + head.element + "\n");
+        pointer = head.next;
+        while(!pointer.isInitial()){
+            System.out.println(pointer.element + "\n");
+            pointer = pointer.next;
+        }
+        return null;
     }
 }
