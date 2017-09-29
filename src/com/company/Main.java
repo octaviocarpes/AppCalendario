@@ -23,7 +23,14 @@ public class Main {
         meses[0].montaDatas();
         meses[1].montaDatas();
 
+        Evento evento = new Evento("Teste Cadastra Evento","28/02/2017");
+        evento.cadastraEvento();
 
+        Evento evento2 = new Evento("Teste Cadastra Evento","28/02/2017");
+        evento2.cadastraEvento();
+
+        Evento evento1 = new Evento("Teste Cadastra Evento","26/02/2017");
+        evento1.cadastraEvento();
 
         System.out.printf(meses[0].toString());
         System.out.printf(meses[1].toString());

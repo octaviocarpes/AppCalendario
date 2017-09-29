@@ -130,6 +130,10 @@ public class Mes {
         }
     }
 
+    public Dia getDia(int data){
+        return dias.get(data);
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
@@ -139,7 +143,7 @@ public class Mes {
             res.append("**********************************************\n");
             res.append("* " + dias.get(i).getNomeDia() + "                      \n");
             res.append("* " + dias.get(i).getData() + "/" + nome + "/" + ano + "\n");
-            res.append("*                                             \n");
+            res.append("* " + dias.get(i).getEventos().toString() + "                                            \n");
             res.append("*                                             \n");
             res.append("*                                             \n");
             res.append("*                                             \n");

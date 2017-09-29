@@ -10,6 +10,7 @@ public class Dia {
     public Dia(String nomeDia, int data) {
         this.nomeDia = nomeDia;
         this.data = data;
+        eventos = new ArrayList<>();
     }
 
     public String getNomeDia() {
@@ -24,11 +25,16 @@ public class Dia {
         return eventos;
     }
 
+    public void addEventos(Evento evento){
+        eventos.add(evento);
+    }
+
     @Override
     public String toString() {
         return "Dia{" +
                 "nomeDia='" + nomeDia + '\'' +
-                ", data=" + data +
+                ", data=" + data + "\'" +
+                ", Eventos= " + eventos +
                 '}';
     }
 }
