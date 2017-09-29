@@ -6,25 +6,14 @@ import java.util.ArrayList;
 public class Mes {
     private String nome;
     private ArrayList<Dia> dias;
-    private LoopingLinkedList<String> diasDaSemana;
+
     private int ano;
 
     public Mes(String nome,int ano) {
         this.nome = nome;
         dias = new ArrayList<>();
-        diasDaSemana = new LoopingLinkedList<>();
+
         this.ano = ano;
-
-        diasDaSemana.add("Segunda");
-        diasDaSemana.add("Terça");
-        diasDaSemana.add("Quarta");
-        diasDaSemana.add("Quinta");
-        diasDaSemana.add("Sexta");
-        diasDaSemana.add("Sabado");
-        diasDaSemana.add("Domingo");
-
-        diasDaSemana.setPointer("Sabado");
-
     }
 
     public void montaDatas(){
@@ -34,7 +23,8 @@ public class Mes {
             case "Janeiro":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -42,7 +32,8 @@ public class Mes {
             case "Fevereiro":
                 if (i >= 28){i = 1;}
                 while(i < 29) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -50,7 +41,8 @@ public class Mes {
             case "Março":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -58,7 +50,8 @@ public class Mes {
             case "Abril":
                 if (i >= 28){i = 1;}
                 while(i < 31) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -66,7 +59,8 @@ public class Mes {
             case "Maio":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -74,7 +68,8 @@ public class Mes {
             case "Junho":
                 if (i >= 28){i = 1;}
                 while(i < 31) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -82,7 +77,8 @@ public class Mes {
             case "Julho":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -90,7 +86,8 @@ public class Mes {
             case "Agosto":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -98,7 +95,8 @@ public class Mes {
             case "Setembro":
                 if (i >= 28){i = 1;}
                 while(i < 31) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -106,7 +104,8 @@ public class Mes {
             case "Outubro":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -114,7 +113,8 @@ public class Mes {
             case "Novembro":
                 if (i >= 28){i = 1;}
                 while(i < 31) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;
@@ -122,7 +122,8 @@ public class Mes {
             case "Dezembro":
                 if (i >= 28){i = 1;}
                 while(i < 32) {
-                    dias.add(new Dia(diasDaSemana.getNext(), i));
+                    String diasDaSemana = LoopingLinkedList.getInstace().getNext().toString();
+                    dias.add(new Dia(diasDaSemana, i));
                     i++;
                 }
                 break;

@@ -24,4 +24,8 @@ public class Evento {
     public void setDataDoEvento(String dataDoEvento) {
         this.dataDoEvento = dataDoEvento;
     }
+
+    public void cadastraEvento(Dia dia, Mes mes, Ano ano){
+
+    }
 }

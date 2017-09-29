@@ -1,13 +1,13 @@
 package com.company;
 
-public class LoopingLinkedList<E> {
+public class LoopingLinkedList<String> {
 
     private class Node{
-        E element;
+        String element;
         private Node next;
         boolean initial = false;
 
-        public Node(E element){
+        public Node(String element){
             this.element = element;
         }
 
@@ -21,15 +21,22 @@ public class LoopingLinkedList<E> {
     }
 
     private Node head;
-
     private Node pointer;
     private int size;
-
-    public LoopingLinkedList() {
+    private static LoopingLinkedList lista;
+    
+    private LoopingLinkedList() {
         size = 0;
     }
 
-    public void add(E element){
+    public static LoopingLinkedList getInstace(){
+        if (lista == null){
+            lista = new LoopingLinkedList();
+        }
+        return lista;
+    }
+    
+    public void add(String element){
         if (head == null){
             head = new Node(element);
             head.setInitial();
@@ -55,14 +62,14 @@ public class LoopingLinkedList<E> {
         size++;
     }
 
-    public void setPointer(E element){
+    public void setPointer(String element){
         pointer = head;
         while(pointer.element != element){
             pointer = pointer.next;
         }
     }
 
-    public E getNext(){
+    public String getNext(){
         pointer = pointer.next;
         return pointer.element;
     }
@@ -72,7 +79,7 @@ public class LoopingLinkedList<E> {
     }
 
 
-    public String toString() {
+    public java.lang.String toString() {
 
         System.out.println("LoopingLinkedList:\n\n" + head.element + "\n");
         pointer = head.next;
