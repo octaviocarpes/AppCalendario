@@ -32,6 +32,9 @@ public class Main {
         Evento evento1 = new Evento("Teste Cadastra Evento","26/02/2017");
         evento1.cadastraEvento();
 
+        Evento evento3 = new Evento("Teste Cadastra Evento","30/02/2017");
+        evento1.cadastraEvento();
+
         System.out.printf(meses[0].toString());
         System.out.printf(meses[1].toString());
 

@@ -32,6 +32,31 @@ public class Evento {
         int mes = Integer.parseInt(data[1]);
         int ano = Integer.parseInt(data[2]);
 
+        if (mes == 2){
+            if(dia < 1 || dia > 28){
+                System.out.println("Não foi possível cadastrar Evento!");
+                System.out.println("Dia Inválido");
+                return;
+            }
+        }
+
+        if (dia < 1 || dia > 31){
+            System.out.println("Não foi possível cadastrar Evento!");
+            System.out.println("Dia Inválido");
+            return;
+        }
+
+        if (mes < 1 || mes > 12){
+            System.out.println("Não foi possível cadastrar Evento!");
+            System.out.println("Mês Inválido!");
+            return;
+        }
+
+        if (ano < 2017 || ano > 2027){
+            System.out.println("Não foi possível cadastrar Evento!");
+            System.out.println("Ano Inválido!");
+        }
+
         Ano year = Calendario.getInstance().getAno(ano);
 
         Mes [] meses = year.getMeses();
