@@ -25,14 +25,14 @@ public class Evento {
         this.dataDoEvento = dataDoEvento;
     }
 
-    //Fromato dia/mes/ano
+    //Formato dia/mes/ano
     public void cadastraEvento(){
         String[] data = dataDoEvento.split("/");
         int dia = Integer.parseInt(data[0]);
         int mes = Integer.parseInt(data[1]);
         int ano = Integer.parseInt(data[2]);
 
-        if (mes == 2){
+        if (mes == 02){
             if(dia < 1 || dia > 28){
                 System.out.println("Não foi possível cadastrar Evento!");
                 System.out.println("Dia Inválido");
