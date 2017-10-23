@@ -1,7 +1,17 @@
 package com.company;
 
+/**
+ * Classe Auxiliar para montar os dias dos anos
+ * Lista Encadeada feita com Singleton
+ * @param <String>
+ */
+
 public class LoopingLinkedList<String> {
 
+
+    /**
+     * Classe auxiliar para ajuda na construção do TAD
+     */
     private class Node{
         String element;
         private Node next;
@@ -35,7 +45,12 @@ public class LoopingLinkedList<String> {
         }
         return lista;
     }
-    
+
+    /**
+     * Esta função adiciona um elemento na lista.
+     * Todos os elementos são inseridos no final da lista.
+     * @param element
+     */
     public void add(String element){
         if (head == null){
             head = new Node(element);
@@ -62,6 +77,11 @@ public class LoopingLinkedList<String> {
         size++;
     }
 
+
+    /**
+     * Modifica o Pointer para apontar para o elemento designado.
+     * @param element
+     */
     public void setPointer(String element){
         pointer = head;
         while(pointer.element != element){
@@ -69,11 +89,21 @@ public class LoopingLinkedList<String> {
         }
     }
 
+
+    /**
+     * Retorna o próximo elemento da lista.
+     * @return
+     */
     public String getNext(){
         pointer = pointer.next;
         return pointer.element;
     }
 
+
+    /**
+     * Retorna o tamanho da lista.
+     * @return
+     */
     public int size(){
         return size;
     }

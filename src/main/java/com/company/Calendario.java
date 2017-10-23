@@ -2,6 +2,10 @@ package com.company;
 
 import java.util.ArrayList;
 
+/**
+ * Esta classe Representa o Calendário.
+ * O Calendário contém uma lista de anos.
+ */
 public class Calendario {
 
     private static Calendario calendario;
@@ -15,7 +19,6 @@ public class Calendario {
 
     public Calendario() {
         anos = new ArrayList<Ano>();
-        contadorDias = 1;
         //Adiciona 10 anos no Calendario
         int anoInicial = 2017;
         for (int i = anoInicial; i < 2027 ; i++) {
@@ -24,7 +27,6 @@ public class Calendario {
     }
 
     private ArrayList<Ano> anos;
-    public static int contadorDias;
 
     public Ano getAno(int numeroAno){
         boolean flag = false;

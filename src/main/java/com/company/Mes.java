@@ -2,7 +2,9 @@ package com.company;
 
 import java.util.ArrayList;
 
-
+/**
+ * Esta classe Representa os meses de um ano
+ */
 public class Mes {
     private String nome;
     private ArrayList<Dia> dias;
@@ -16,6 +18,9 @@ public class Mes {
         this.ano = ano;
     }
 
+    /**
+     * Monta os dias dos meses utilizando a LoopingLinkedList
+     */
     public void montaDatas(){
         int i = 1;
         switch (nome){
@@ -130,6 +135,12 @@ public class Mes {
         }
     }
 
+
+    /**
+     * retorna um dia
+     * @param data
+     * @return
+     */
     public Dia getDia(int data){
         return dias.get(data);
     }

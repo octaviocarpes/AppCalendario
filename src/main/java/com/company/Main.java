@@ -1,6 +1,7 @@
 package com.company;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import static javafx.application.Application.launch;
 
@@ -24,6 +25,23 @@ public class Main{
             m.montaDatas();
         }
 
+        System.out.println("MyCalendar!");
+
+
+        boolean flag = true;
+//
+//        while(flag){
+//            Scanner sc = new Scanner(System.in);
+//
+//
+//            System.out.print("Login: ");
+//            sc.next();
+//
+//            System.out.print("Senha: ");
+//            sc.next();
+//            flag = false;
+//
+//        }
 
     }
 

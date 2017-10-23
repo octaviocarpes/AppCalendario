@@ -1,5 +1,9 @@
 package com.company;
 
+
+/**
+ * Esta classe representa um Ano de um calendário
+ */
 public class Ano {
     private int ano;
     private Mes[] meses;
@@ -21,10 +25,18 @@ public class Ano {
         meses[11] = new Mes("Dezembro",ano);
     }
 
+    /**
+     * Retorna o ano
+     * @return
+     */
     public int getAno() {
         return ano;
     }
 
+    /**
+     * Retorna a lista dos meses do ano.
+     * @return
+     */
     public Mes[] getMeses() {
         return meses;
     }

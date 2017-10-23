@@ -1,10 +1,9 @@
 package com.company;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
+/**
+ * Esta classe representa um Evento em um dia
+ * Cada evento possi uma data e um nome
+ */
 public class Evento {
     private String nomeDoEvento;
     private String dataDoEvento;
@@ -14,23 +13,43 @@ public class Evento {
         this.dataDoEvento = dataDoEvento;
     }
 
+    /**
+     * Retorna o Nome do Evento
+     * @return
+     */
     public String getNomeDoEvento() {
         return nomeDoEvento;
     }
 
+    /**
+     * Ajusta o nome do evento
+     * @param nomeDoEvento
+     */
     public void setNomeDoEvento(String nomeDoEvento) {
         this.nomeDoEvento = nomeDoEvento;
     }
 
+
+    /**
+     * Retorna a data do Evento no formato dd/mm/aa
+     * @return
+     */
     public String getDataDoEvento() {
         return dataDoEvento;
     }
 
+
+    /**
+     * Modifica a data do Evento no formato dd/mm/aa;
+     * @param dataDoEvento
+     */
     public void setDataDoEvento(String dataDoEvento) {
         this.dataDoEvento = dataDoEvento;
     }
 
-    //Formato dia/mes/ano
+    /**
+     * Cadastra um Evento em um dia utilizando a propria data do evento.
+     */
     public void cadastraEvento(){
         String[] data = dataDoEvento.split("/");
         int dia = Integer.parseInt(data[0]);
