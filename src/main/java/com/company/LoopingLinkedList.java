@@ -29,7 +29,7 @@ public class LoopingLinkedList<String> {
         size = 0;
     }
 
-    public static LoopingLinkedList getInstace(){
+    public static LoopingLinkedList getInstance(){
         if (lista == null){
             lista = new LoopingLinkedList();
         }

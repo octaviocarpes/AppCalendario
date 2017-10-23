@@ -1,5 +1,10 @@
 package com.company;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class Evento {
     private String nomeDoEvento;
     private String dataDoEvento;
@@ -63,9 +68,12 @@ public class Evento {
 
         Mes month = meses[mes -1];
 
-        Dia day = month.getDia(dia - 1);
+        month.montaDatas();
+
+        Dia day = month.getDia(dia -1 );
 
         day.addEventos(new Evento(nomeDoEvento,dataDoEvento));
+
     }
 
     @Override
