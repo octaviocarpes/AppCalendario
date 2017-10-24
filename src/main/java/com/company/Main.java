@@ -25,7 +25,7 @@ public class Main{
             m.montaDatas();
         }
 
-        System.out.println("MyCalendar!");
+        System.out.print(months[0].toString());
 
 
         boolean flag = true;

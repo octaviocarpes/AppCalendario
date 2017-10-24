@@ -81,17 +81,15 @@ public class Evento {
             System.out.println("Ano Inválido!");
         }
 
-        Ano year = Calendario.getInstance().getAno(ano);
 
-        Mes [] meses = year.getMeses();
+        for (Mes m: Calendario.getInstance().getAno(ano).getMeses()
+             ) {
+            m.montaDatas();
+        }
 
-        Mes month = meses[mes -1];
 
-        month.montaDatas();
 
-        Dia day = month.getDia(dia -1 );
-
-        day.addEventos(new Evento(nomeDoEvento,dataDoEvento));
+        Calendario.getInstance().getAno(ano).getMeses()[mes -1].getDia(dia).addEventos(new Evento(nomeDoEvento,dataDoEvento));
 
     }
 
@@ -100,5 +98,24 @@ public class Evento {
         return "{'"
                  + nomeDoEvento + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Evento evento = (Evento) o;
+
+        if (nomeDoEvento != null ? !nomeDoEvento.equals(evento.nomeDoEvento) : evento.nomeDoEvento != null)
+            return false;
+        return dataDoEvento != null ? dataDoEvento.equals(evento.dataDoEvento) : evento.dataDoEvento == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nomeDoEvento != null ? nomeDoEvento.hashCode() : 0;
+        result = 31 * result + (dataDoEvento != null ? dataDoEvento.hashCode() : 0);
+        return result;
     }
 }

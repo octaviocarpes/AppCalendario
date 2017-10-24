@@ -3,7 +3,8 @@ package com.company;
 import java.util.ArrayList;
 
 /**
- * Esta classe Representa os meses de um ano
+ * Esta classe Representa os meses de um ano.
+ * cada mês contém umaa lista de Dias, seu ano correspondente  e seu nome e.g: "Março".
  */
 public class Mes {
     private String nome;
@@ -11,6 +12,11 @@ public class Mes {
 
     private int ano;
 
+    /**
+     * No construtor são passados o nome do mês e o ano o qual pertençe.
+     * @param nome
+     * @param ano
+     */
     public Mes(String nome,int ano) {
         this.nome = nome;
         dias = new ArrayList<>();
@@ -25,6 +31,11 @@ public class Mes {
         int i = 1;
         switch (nome){
 
+            /**
+             * Cria laços dependendo de qual é o nome do mês.
+             * por exemplo se for Fevereiro, o laço vai até 28.
+             * Em cada iteração é criado um Dia e esse dia é adicionado na lista de dias.
+             */
             case "Janeiro":
                 if (i >= 28){i = 1;}
                 while(i < 32) {

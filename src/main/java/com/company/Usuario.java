@@ -28,29 +28,14 @@ public class Usuario {
         meusEventos.add(evento);
     }
 
-    /**
-     * Este método "Carrega" todos os eventos do usuário
-     * Lê o arquvo txt e converte as Strings para eventos.
-     * @param fileName
-     */
-    public void loadUser(String fileName){
-        ArrayList<String> aux = FileManipulator.getInstance().readFile(fileName);
+    //TODO refatorar método para ler dados do banco de dados.
+    public void loadUser(){
 
-        for (int i = 0; i < aux.size() ; i++) {
-            String[] data = aux.get(i).split(";");
-            Evento evento = new Evento(data[1],data[0]);
-            meusEventos.add(evento);
-            evento.cadastraEvento();
-        }
     }
 
-    /**
-     * Este método "Salva" todos os eventos do usuário
-     * em um arquivo txt
-     * @param fileName
-     */
-    public void saveUser(String fileName){
-        FileManipulator.getInstance().writeFile(meusEventos,fileName);
+    //TODO refatorar método para inserir dados no banco de dados.
+    public void saveUser(){
+
     }
 
     /**
