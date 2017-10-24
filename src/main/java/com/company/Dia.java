@@ -61,4 +61,25 @@ public class Dia {
                 ", Eventos= " + eventos +
                 '}';
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Dia dia = (Dia) o;
+
+        if (data != dia.data) return false;
+        if (nomeDia != null ? !nomeDia.equals(dia.nomeDia) : dia.nomeDia != null) return false;
+        return eventos != null ? eventos.equals(dia.eventos) : dia.eventos == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nomeDia != null ? nomeDia.hashCode() : 0;
+        result = 31 * result + data;
+        result = 31 * result + (eventos != null ? eventos.hashCode() : 0);
+        return result;
+    }
 }
