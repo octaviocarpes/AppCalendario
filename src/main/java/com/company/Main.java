@@ -25,7 +25,18 @@ public class Main{
             m.montaDatas();
         }
 
-        System.out.print(months[0].toString());
+        MySQLConnection bd = new MySQLConnection();
+
+        Usuario usr = new Usuario("Octavio",0001);
+        Evento bdTeste = new Evento("Teste do Banco de Dados","25/10/2017");
+
+        usr.cadastraEvento(bdTeste);
+
+        try {
+            usr.saveUser(bd.getConnection());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
 
         boolean flag = true;
