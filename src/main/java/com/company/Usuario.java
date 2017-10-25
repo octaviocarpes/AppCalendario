@@ -14,13 +14,17 @@ import java.util.ArrayList;
 public class Usuario {
     private String nome;
     private int userID;
+    private String email;
+    private String senha;
     private ArrayList<Evento> meusEventos;
 
 
     //Construtor
-    public Usuario(String nome,int userID) {
+    public Usuario(String nome,String email,String senha, int userID) {
         this.nome = nome;
         this.userID = userID;
+        this.email = email;
+        this.senha = senha;
         meusEventos = new ArrayList<>();
     }
 
@@ -48,30 +52,10 @@ public class Usuario {
         meusEventos.add(evento);
     }
 
-    //TODO refatorar método para ler dados do banco de dados.
-    public void loadUser(){
-
-    }
 
 
-    public void saveUser(Connection connection) throws SQLException{
-        for (Evento e:meusEventos
-             ) {
-            String[] data = e.getDataDoEvento().split("/");
-            String dia = data[0];
-            String mes = data[1];
-            String ano = data[2];
 
-            String descriscao = e.getNomeDoEvento();
 
-            String sql = "insert into eventos(dia,mes,ano,descriscao,user_id)\n" +
-                         "values("+ dia + ","+ mes +"," + ano + "," + "'" + descriscao + "'" + "," + getUserID() +")";
-
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.execute();
-            statement.close();
-        }
-    }
 
     /**
      * Retorna todos os eventos do usuário

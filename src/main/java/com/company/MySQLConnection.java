@@ -4,8 +4,8 @@ import java.sql.*;
 
 public class MySQLConnection {
 
-    private static final  String driver = "com.mysql.jdbc.Driver";
-    private static final  String url = "jdbc:mysql://localhost:3306/my_calendar";
+    private static final  String driver = "com.mysql.cj.jdbc.Driver";
+    private static final  String url = "jdbc:mysql://localhost:3306/my_calendar?useSSL=false";
     private static final  String user = "root";
     private static final  String senha = "senha";
     private static String status = "";
@@ -17,7 +17,7 @@ public class MySQLConnection {
     }
 
 
-    public static Connection getConnection(){
+    public Connection getConnection(){
         Connection connection = null;
         try {
 

@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.jmx.snmp.SnmpUnknownSubSystemException;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -27,17 +29,18 @@ public class Main{
 
         MySQLConnection bd = new MySQLConnection();
 
-        Usuario usr = new Usuario("Octavio",0001);
-        Evento bdTeste = new Evento("Teste do Banco de Dados","25/10/2017");
+        UsuarioDAO usrBD = new UsuarioDAO(bd.getConnection());
 
-        usr.cadastraEvento(bdTeste);
+        usrBD.loadUser("kaibaman@gmail.com","blue eyes");
 
-        try {
-            usr.saveUser(bd.getConnection());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Usuario usr = null;
 
+        usrBD.setUsuario(usr);
+
+        usr = usrBD.getUsuario();
+
+        System.out.println(usr.getNome());
+        System.out.println(usr.getEventos());
 
         boolean flag = true;
 //
