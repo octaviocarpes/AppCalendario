@@ -8,7 +8,9 @@ import java.util.ArrayList;
  */
 public class Calendario {
 
+    private ArrayList<Ano> anos;
     private static Calendario calendario;
+
 
     public static Calendario getInstance(){
         if(calendario == null){
@@ -17,7 +19,7 @@ public class Calendario {
         return calendario;
     }
 
-    public Calendario() {
+    private Calendario() {
         anos = new ArrayList<Ano>();
         //Adiciona 10 anos no Calendario
         int anoInicial = 2017;
@@ -25,8 +27,6 @@ public class Calendario {
             anos.add(new Ano(i));
         }
     }
-
-    private ArrayList<Ano> anos;
 
     public Ano getAno(int numeroAno){
         boolean flag = false;
@@ -43,6 +43,8 @@ public class Calendario {
         }
         return null;
     }
+
+
 
 
 }

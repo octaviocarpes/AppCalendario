@@ -27,53 +27,6 @@ public class Main{
             m.montaDatas();
         }
 
-        MySQLConnection bd = new MySQLConnection();
-
-        UsuarioDAO octavioDAO = new UsuarioDAO(bd.getConnection());
-
-        octavioDAO.loadUser("octavio@email.com","super senha secreta");
-
-        Usuario octavioDoBanco = new Usuario(octavioDAO.getUsuario().getNome(),
-                                             octavioDAO.getUsuario().getEmail(),
-                                             octavioDAO.getUsuario().getSenha());
-
-        octavioDoBanco.setUserID(octavioDAO.getUsuario().getUserID());
-
-        octavioDoBanco.setMeusEventos(octavioDAO.getUsuario().getEventos());
-
-        System.out.println(octavioDoBanco);
-        System.out.println(octavioDoBanco.getEventos());
-
-        /**
-         * Testesinho para ver se estava dando tudo certo
-         */
-//        UsuarioDAO usuarioDAO = new UsuarioDAO(bd.getConnection());
-//
-//        Usuario octavio = new Usuario("Octavio","octavio@email.com","super senha secreta");
-//
-//        usuarioDAO.setUsuario(octavio);
-//
-//        try {
-//            usuarioDAO.registerUser();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        octavio.setUserID(usuarioDAO.getUsuario().getUserID());
-//
-//        System.out.println(octavio.toString());
-//
-//        Evento kappa = new Evento("Kappa Pride Event Tiem(Teste DAO saveUser)","26/10/2017");
-//
-//        octavio.cadastraEvento(kappa);
-//
-//        usuarioDAO.setUsuario(octavio);
-//
-//        try {
-//            usuarioDAO.saveUser();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
 
 
     }
