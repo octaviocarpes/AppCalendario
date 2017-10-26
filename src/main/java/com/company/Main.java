@@ -29,33 +29,52 @@ public class Main{
 
         MySQLConnection bd = new MySQLConnection();
 
-        UsuarioDAO usrBD = new UsuarioDAO(bd.getConnection());
+        UsuarioDAO octavioDAO = new UsuarioDAO(bd.getConnection());
 
-        usrBD.loadUser("kaibaman@gmail.com","blue eyes");
+        octavioDAO.loadUser("octavio@email.com","super senha secreta");
 
-        Usuario usr = null;
+        Usuario octavioDoBanco = new Usuario(octavioDAO.getUsuario().getNome(),
+                                             octavioDAO.getUsuario().getEmail(),
+                                             octavioDAO.getUsuario().getSenha());
 
-        usrBD.setUsuario(usr);
+        octavioDoBanco.setUserID(octavioDAO.getUsuario().getUserID());
 
-        usr = usrBD.getUsuario();
+        octavioDoBanco.setMeusEventos(octavioDAO.getUsuario().getEventos());
 
-        System.out.println(usr.getNome());
-        System.out.println(usr.getEventos());
+        System.out.println(octavioDoBanco);
+        System.out.println(octavioDoBanco.getEventos());
 
-        boolean flag = true;
+        /**
+         * Testesinho para ver se estava dando tudo certo
+         */
+//        UsuarioDAO usuarioDAO = new UsuarioDAO(bd.getConnection());
 //
-//        while(flag){
-//            Scanner sc = new Scanner(System.in);
+//        Usuario octavio = new Usuario("Octavio","octavio@email.com","super senha secreta");
 //
+//        usuarioDAO.setUsuario(octavio);
 //
-//            System.out.print("Login: ");
-//            sc.next();
-//
-//            System.out.print("Senha: ");
-//            sc.next();
-//            flag = false;
-//
+//        try {
+//            usuarioDAO.registerUser();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
 //        }
+//
+//        octavio.setUserID(usuarioDAO.getUsuario().getUserID());
+//
+//        System.out.println(octavio.toString());
+//
+//        Evento kappa = new Evento("Kappa Pride Event Tiem(Teste DAO saveUser)","26/10/2017");
+//
+//        octavio.cadastraEvento(kappa);
+//
+//        usuarioDAO.setUsuario(octavio);
+//
+//        try {
+//            usuarioDAO.saveUser();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+
 
     }
 

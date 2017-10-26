@@ -20,9 +20,8 @@ public class Usuario {
 
 
     //Construtor
-    public Usuario(String nome,String email,String senha, int userID) {
+    public Usuario(String nome,String email,String senha) {
         this.nome = nome;
-        this.userID = userID;
         this.email = email;
         this.senha = senha;
         meusEventos = new ArrayList<>();
@@ -44,6 +43,24 @@ public class Usuario {
         this.userID = userID;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+
+
     /**
      * Este método cadastra um evento na lista de eventos do usuário
      * @param evento
@@ -53,15 +70,28 @@ public class Usuario {
     }
 
 
-
-
-
-
     /**
      * Retorna todos os eventos do usuário
      * @return
      */
     public ArrayList<Evento> getEventos() {
         return meusEventos;
+    }
+
+    public void setMeusEventos(ArrayList<Evento>eventoArrayList){
+        for (Evento e:eventoArrayList
+             ) {
+            meusEventos.add(e);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", userID=" + userID +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }
