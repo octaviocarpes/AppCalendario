@@ -7,6 +7,9 @@ import helpers.LoopingLinkedList;
 import model.Mes;
 import model.Usuario;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.Scanner;
 
 import static javafx.application.Application.launch;
@@ -50,8 +53,12 @@ public class Main{
         System.out.println("\n");
         System.out.println("Bem vindo! " + master.getNome());
 
-        System.out.println(master.getEventos());
+        System.out.println(master.getEventos().get(0));
+        System.out.println(master.getEventos().get(0).getDataDoEvento());
 
     }
 
+
 }
+
+
