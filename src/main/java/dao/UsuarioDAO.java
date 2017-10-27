@@ -81,7 +81,7 @@ public class UsuarioDAO {
     }
 
 
-    public void loadUser(String email,String senha){
+    public Usuario loadUser(String email, String senha){
         ArrayList<Evento> listaEventosBD = new ArrayList<>();
 
         try {
@@ -131,6 +131,7 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return usuario;
     }
 
     public Usuario getUsuario() {

@@ -1,8 +1,13 @@
 package controller;
 
+import dao.MySQLConnection;
+import dao.UsuarioDAO;
 import model.Calendario;
 import helpers.LoopingLinkedList;
 import model.Mes;
+import model.Usuario;
+
+import java.util.Scanner;
 
 import static javafx.application.Application.launch;
 
@@ -26,9 +31,27 @@ public class Main{
             m.montaDatas();
         }
 
+        System.out.println("MyCalendar!");
+        System.out.println("Digite Usuário e senha para fazer Login!");
 
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Usuário:" );
+        String inputLogin = sc.next();
+
+        System.out.print("Senha: ");
+        String inputPassword = sc.next();
+
+        MySQLConnection  bd = new MySQLConnection();
+        UsuarioDAO userDAO = new UsuarioDAO(bd.getConnection());
+
+        Usuario master = userDAO.loadUser(inputLogin,inputPassword);
+
+        System.out.println("\n");
+        System.out.println("Bem vindo! " + master.getNome());
+
+        System.out.println(master.getEventos());
 
     }
-
 
 }
