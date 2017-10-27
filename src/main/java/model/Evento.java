@@ -1,4 +1,4 @@
-package com.company;
+package model;
 
 /**
  * Esta classe representa um Evento em um dia

@@ -1,4 +1,4 @@
-package com.company;
+package helpers;
 
 /**
  * Classe Auxiliar para montar os dias dos anos
@@ -89,6 +89,13 @@ public class LoopingLinkedList<String> {
         }
     }
 
+    /**
+     * Retorna o elemento atual da lista.
+     * @return
+     */
+    public String get(){
+        return pointer.element;
+    }
 
     /**
      * Retorna o próximo elemento da lista.
@@ -108,6 +115,11 @@ public class LoopingLinkedList<String> {
         return size;
     }
 
+    public boolean isEmpty(){
+        if(size == 0)return  true;
+        return false;
+    }
+
 
     public java.lang.String toString() {
 
@@ -118,5 +130,25 @@ public class LoopingLinkedList<String> {
             pointer = pointer.next;
         }
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        LoopingLinkedList<?> that = (LoopingLinkedList<?>) o;
+
+        if (size != that.size) return false;
+        if (head != null ? !head.equals(that.head) : that.head != null) return false;
+        return pointer != null ? pointer.equals(that.pointer) : that.pointer == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = head != null ? head.hashCode() : 0;
+        result = 31 * result + (pointer != null ? pointer.hashCode() : 0);
+        result = 31 * result + size;
+        return result;
     }
 }

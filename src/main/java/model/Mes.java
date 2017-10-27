@@ -1,4 +1,6 @@
-package com.company;
+package model;
+
+import helpers.LoopingLinkedList;
 
 import java.util.ArrayList;
 
@@ -175,5 +177,25 @@ public class Mes {
             res.append("\n");
         }
         return res.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Mes mes = (Mes) o;
+
+        if (ano != mes.ano) return false;
+        if (nome != null ? !nome.equals(mes.nome) : mes.nome != null) return false;
+        return dias != null ? dias.equals(mes.dias) : mes.dias == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nome != null ? nome.hashCode() : 0;
+        result = 31 * result + (dias != null ? dias.hashCode() : 0);
+        result = 31 * result + ano;
+        return result;
     }
 }
