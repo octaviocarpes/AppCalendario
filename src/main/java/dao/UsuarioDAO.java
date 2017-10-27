@@ -1,4 +1,7 @@
-package com.company;
+package dao;
+
+import model.Evento;
+import model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

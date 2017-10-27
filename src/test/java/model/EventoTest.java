@@ -1,5 +1,6 @@
-package com.company;
+package model;
 
+import helpers.LoopingLinkedList;
 import org.junit.Test;
 
 import java.util.ArrayList;

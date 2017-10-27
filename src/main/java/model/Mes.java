@@ -1,4 +1,6 @@
-package com.company;
+package model;
+
+import helpers.LoopingLinkedList;
 
 import java.util.ArrayList;
 
