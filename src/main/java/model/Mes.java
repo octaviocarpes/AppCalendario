@@ -22,7 +22,6 @@ public class Mes {
     public Mes(String nome,int ano) {
         this.nome = nome;
         dias = new ArrayList<>();
-
         this.ano = ano;
     }
 
@@ -156,6 +155,10 @@ public class Mes {
      */
     public Dia getDia(int data){
         return dias.get(data);
+    }
+
+    public ArrayList<Dia> getDias() {
+        return dias;
     }
 
     @Override
