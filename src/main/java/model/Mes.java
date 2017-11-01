@@ -25,6 +25,14 @@ public class Mes {
         this.ano = ano;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
     /**
      * Monta os dias dos meses utilizando a LoopingLinkedList
      */

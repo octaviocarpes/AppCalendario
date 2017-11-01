@@ -115,9 +115,39 @@ public class LoopingLinkedList<String> {
         return size;
     }
 
+
+    /**
+     * Verifica se a lista está vazia
+     * @return
+     */
     public boolean isEmpty(){
         if(size == 0)return  true;
         return false;
+    }
+
+    /**
+     * Apaga todos os elementos da lista.
+     */
+    public void clear(){
+        head = null;
+        //head.next = null;
+    }
+
+    /**
+     * Preenche a lista com os dias da semana
+     */
+    public void populaSemana(){
+        clear();
+
+        LoopingLinkedList.getInstance().add("Segunda");
+        LoopingLinkedList.getInstance().add("Terça");
+        LoopingLinkedList.getInstance().add("Quarta");
+        LoopingLinkedList.getInstance().add("Quinta");
+        LoopingLinkedList.getInstance().add("Sexta");
+        LoopingLinkedList.getInstance().add("Sabado");
+        LoopingLinkedList.getInstance().add("Domingo");
+
+        LoopingLinkedList.getInstance().setPointer("Sexta");
     }
 
 
