@@ -1,0 +1,22 @@
+create table usuarios(
+
+	nome varchar(100) not null,
+    email varchar(100) not null,
+    senha varchar(100) not null,
+    user_id integer(1000) primary key
+
+);
+
+ALTER TABLE usuarios CHANGE user_id user_id integer(1000)AUTO_INCREMENT PRIMARY KEY;
+
+create table eventos(
+
+	dia integer(2) not null,
+    mes integer(2) not null,
+    ano integer(4) not null,
+    descriscao varchar(1000) not null,
+    hora varchar(5),
+    localizacao varchar(1000),
+    FOREIGN KEY (user_id) REFERENCES usuarios(user_id)
+
+);
