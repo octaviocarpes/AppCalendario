@@ -82,14 +82,12 @@ public class Evento {
         }
 
 
-        for (Mes m: Calendario.getInstance().getAno(ano).getMeses()
-             ) {
-            m.montaDatas();
-        }
+//        for (Mes m: Calendario.getInstance().getAno(ano).getMeses()
+//             ) {
+//            m.montaDatas();
+//        }
 
-
-
-        Calendario.getInstance().getAno(ano).getMeses()[mes -1].getDia(dia).addEventos(new Evento(nomeDoEvento,dataDoEvento));
+        Calendario.getInstance().getAno(ano).getMeses()[mes -1].getDia(dia-1).addEventos(new Evento(nomeDoEvento,dataDoEvento));
 
     }
 

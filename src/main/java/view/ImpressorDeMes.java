@@ -1,7 +1,6 @@
 package view;
-import jcurses.system.CharColor;
-import jcurses.widgets.*;
 
+import java.awt.Color;
 import helpers.LoopingLinkedList;
 import model.Mes;
 
@@ -20,35 +19,42 @@ public class ImpressorDeMes {
         }
         System.out.println(mesParaImpressao.getNome() + " " + mesParaImpressao.getAno());
 
-        String nomePriemiroDia = mesParaImpressao.getDia(1).getNomeDia();
+        String nomePriemiroDia = mesParaImpressao.getDia(0).getNomeDia();
 
         switch(nomePriemiroDia){
             case "Domingo":
                 imprimePrimeiroDiaDomingo(datasComEvento);
+                System.out.println();
                 break;
 
             case "Segunda":
                 imprimePrimeiroDiaSegunda(datasComEvento);
+                System.out.println();
                 break;
 
             case "Terça":
                 imprimePrimeiroDiaTerca(datasComEvento);
+                System.out.println();
                 break;
 
             case "Quarta":
                 imprimePrimeiroDiaQuarta(datasComEvento);
+                System.out.println();
                 break;
 
             case "Quinta":
                 imprimePrimeiroDiaQuinta(datasComEvento);
+                System.out.println();
                 break;
 
             case "Sexta":
                 imprimePrimeiroDiaSexta(datasComEvento);
+                System.out.println();
                 break;
 
             case "Sabado":
                 imprimePrimeiroDiaSabado(datasComEvento);
+                System.out.println();
                 break;
         }
     }
@@ -86,11 +92,17 @@ public class ImpressorDeMes {
                         for (String data:datasComEvento
                              ) {
                             if (data.equals(calendario[i][j])){
-                                System.out.print(calendario[i][j] + " ");
+                                System.err.print(calendario[i][j] + " ");
 
                             }
                         }
                     }else{
+                        for (String data: datasComEvento
+                             ) {
+                            if (data.equals(calendario[i][j])){
+                                System.err.println(calendario[i][j] + "  ");
+                            }
+                        }
                         System.out.print(calendario[i][j] + "  ");
                     }
                     calendarioCount++;
@@ -211,8 +223,20 @@ public class ImpressorDeMes {
                 if (i > 0){
                     calendario[i][j] = calendarioCount.toString();
                     if (calendario[i][j].length() > 1){
+                        for (String data: datasComEvento
+                                ) {
+                            if (data.equals(calendario[i][j])){
+                                System.err.println(calendario[i][j] + " ");
+                            }
+                        }
                         System.out.print(calendario[i][j] + " ");
                     }else{
+                        for (String data: datasComEvento
+                                ) {
+                            if (data.equals(calendario[i][j])){
+                                System.err.println(calendario[i][j] + "  ");
+                            }
+                        }
                         System.out.print(calendario[i][j] + "  ");
                     }
                     calendarioCount++;

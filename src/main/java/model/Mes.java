@@ -190,6 +190,27 @@ public class Mes {
         return res.toString();
     }
 
+
+    public String toString(int deDiaTal ,int ateDiaTal) {
+        StringBuilder res = new StringBuilder();
+        res.append(nome);
+        res.append("\n");
+        for (int i = deDiaTal; i < ateDiaTal ; i++) {
+            res.append("**********************************************\n");
+            res.append("* " + dias.get(i).getNomeDia() + "                      \n");
+            res.append("* " + dias.get(i).getData() + "/" + nome + "/" + ano + "\n");
+            res.append("* " + dias.get(i).getEventos().toString() + "                                            \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("**********************************************\n");
+            res.append("\n");
+        }
+        return res.toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

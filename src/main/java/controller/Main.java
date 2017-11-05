@@ -24,11 +24,8 @@ public class Main{
         MySQLConnection bancoDeDados = new MySQLConnection();
         UsuarioDAO userBD = new UsuarioDAO(bancoDeDados.getConnection());
 
-        Scanner sc = new Scanner(System.in);
-
         LoopingLinkedList.getInstance().populaSemana();
 
-        Menu meuMenu = new Menu();
         MeuController controller = new MeuController(userBD);
 
         controller.iniciarPrograma();
