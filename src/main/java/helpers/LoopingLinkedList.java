@@ -147,7 +147,7 @@ public class LoopingLinkedList<String> {
         LoopingLinkedList.getInstance().add("Sabado");
         LoopingLinkedList.getInstance().add("Domingo");
 
-        LoopingLinkedList.getInstance().setPointer("Sexta");
+        LoopingLinkedList.getInstance().setPointer("Sabado");
     }
 
 

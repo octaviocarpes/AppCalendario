@@ -55,11 +55,23 @@ public class Dia {
 
     @Override
     public String toString() {
-        return "Dia{" +
-                "nomeDia='" + nomeDia + '\'' +
-                ", data=" + data + "\'" +
-                ", Eventos= " + eventos +
-                '}';
+        StringBuilder res = new StringBuilder();
+        res.append(getNomeDia());
+        res.append("\n");
+
+            res.append("**********************************************\n");
+            res.append("* " +                       "\n" );
+            res.append("* " + getData()+ "\n");
+            res.append("* " + getEventos().toString() + "                                            \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("*                                             \n");
+            res.append("**********************************************\n");
+            res.append("\n");
+
+        return res.toString();
     }
 
 

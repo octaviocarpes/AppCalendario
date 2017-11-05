@@ -76,8 +76,8 @@ public class UsuarioDAO {
             statement.execute();
             statement.close();
 
-            System.out.printf("Usuário salvo com Sucesso!");
         }
+        System.out.printf("Usuário salvo com Sucesso!\n");
     }
 
 
@@ -125,6 +125,10 @@ public class UsuarioDAO {
                 String descriscao = resultSet.getString("descriscao");
 
                 usuario.cadastraEvento(new Evento(descriscao,data));
+                for (Evento eventoUsuario: usuario.getEventos()
+                     ) {
+                    eventoUsuario.cadastraEvento();
+                }
             }
 
             System.out.println("Usuario Carregado com Sucesso!");
