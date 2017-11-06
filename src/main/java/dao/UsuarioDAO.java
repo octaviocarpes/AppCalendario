@@ -1,5 +1,6 @@
 package dao;
 
+import mail.SendMail;
 import model.Evento;
 import model.Usuario;
 
@@ -13,6 +14,7 @@ public class UsuarioDAO {
 
     private Usuario usuario;
     private Connection connection;
+    private SendMail sendMail;
 
     public UsuarioDAO(Connection connection){
         this.connection = connection;
@@ -101,6 +103,7 @@ public class UsuarioDAO {
 
             }else{
                 System.out.println("Erro! ResultSet está Vazio!");
+                return null;
             }
             statement.close();
         } catch (SQLException e) {
@@ -140,5 +143,23 @@ public class UsuarioDAO {
 
     public Usuario getUsuario() {
         return usuario;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        UsuarioDAO that = (UsuarioDAO) o;
+
+        if (usuario != null ? !usuario.equals(that.usuario) : that.usuario != null) return false;
+        return connection != null ? connection.equals(that.connection) : that.connection == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = usuario != null ? usuario.hashCode() : 0;
+        result = 31 * result + (connection != null ? connection.hashCode() : 0);
+        return result;
     }
 }

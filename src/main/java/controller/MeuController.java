@@ -1,6 +1,7 @@
 package controller;
 
 import dao.UsuarioDAO;
+import mail.SendMail;
 import model.Calendario;
 import model.Evento;
 import model.Mes;
@@ -9,6 +10,7 @@ import view.ImpressorDeCalendario;
 import view.ImpressorDeMes;
 import view.Menu;
 
+import javax.mail.MessagingException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -39,13 +41,19 @@ public class MeuController {
 
             switch (opcaoMenuInicial) {
                 case 1:
-                    System.out.println();
-                    System.out.print("Login: ");
-                    String login = scanner.next();
-                    System.out.print("Senha: ");
-                    String senha = scanner.next();
+                    boolean menuInicialTrigger = true;
+                    while(menuInicialTrigger){
+                        System.out.println();
+                        System.out.print("Login: ");
+                        String login = scanner.next();
+                        System.out.print("Senha: ");
+                        String senha = scanner.next();
 
-                    usuario = usuarioDAO.loadUser(login, senha);
+                        usuario = usuarioDAO.loadUser(login, senha);
+                        if(usuario != null){
+                            menuInicialTrigger = false;
+                        }
+                    }
 
                     boolean flag = true;
                     while (flag) {
@@ -123,16 +131,19 @@ public class MeuController {
                                 } catch (SQLException e) {
                                     e.printStackTrace();
                                 }
+                                String mensagem = "Evento Registrado com Sucesso!\n" +
+                                                  "Você registrou " + descriscao + " na data " + data + "!" + "\nNão se Esqueça!";
+                                try {
+                                    SendMail.Send("my.calendar.not.reply","kappaman",usuario.getEmail(),"Cadastro de Evento!",mensagem);
+                                } catch (MessagingException e) {
+                                    e.printStackTrace();
+                                }
                                 break;
 
                             case 4:
-                                menu.imprimeInterfaceConfiguracoes();
-
-                            case 5:
                                 flag = false;
                                 trigger = false;
                                 break;
-
                         }
                     }
                     break;

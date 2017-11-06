@@ -67,7 +67,7 @@ public class ImpressorDeMes {
         calendario[0][1] = "          ";
         calendario[0][2] = "          ";
         calendario[0][3] = "          ";
-        int conta6dias = 0;
+        int conta5dias = 0;
         boolean flag = true;
 
         for (int i = 0; i < 5 ; i++) {
@@ -75,8 +75,8 @@ public class ImpressorDeMes {
                 if (calendarioCount > mesParaImpressao.getDias().size()){
                     calendarioCount = 1;
                 }
-                if (conta6dias <= 5){
-                    conta6dias++;
+                if (conta5dias <= 5){
+                    conta5dias++;
                     continue;
                 }if (flag){
                     StringBuilder aux = new StringBuilder();
@@ -89,20 +89,8 @@ public class ImpressorDeMes {
                 if (i > 0){
                     calendario[i][j] = calendarioCount.toString();
                     if (calendario[i][j].length() > 1){
-                        for (String data:datasComEvento
-                             ) {
-                            if (data.equals(calendario[i][j])){
-                                System.err.print(calendario[i][j] + " ");
-
-                            }
-                        }
+                        System.out.print(calendario[i][j] + " ");
                     }else{
-                        for (String data: datasComEvento
-                             ) {
-                            if (data.equals(calendario[i][j])){
-                                System.err.println(calendario[i][j] + "  ");
-                            }
-                        }
                         System.out.print(calendario[i][j] + "  ");
                     }
                     calendarioCount++;
@@ -110,7 +98,8 @@ public class ImpressorDeMes {
             }
             System.out.println();
         }
-    }
+        }
+
 
     private void imprimePrimeiroDiaSexta(ArrayList<String> datasComEvento){
         String[][] calendario = new String[5][7];
