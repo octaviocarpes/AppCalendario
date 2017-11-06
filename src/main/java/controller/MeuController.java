@@ -53,6 +53,9 @@ public class MeuController {
                         if(usuario != null){
                             menuInicialTrigger = false;
                         }
+                        if (usuario == null){
+                            iniciarPrograma();
+                        }
                     }
 
                     boolean flag = true;
@@ -122,7 +125,8 @@ public class MeuController {
                                 System.out.print("Digite a data do Evento (Formato dia/mes/ano): ");
                                 String data = scanner.next();
                                 System.out.print("Digite a descrição do evento: ");
-                                String descriscao = scanner.next();
+                                scanner = new Scanner(System.in);
+                                String descriscao = scanner.nextLine();
                                 Evento userEvent = new Evento(descriscao,data);
                                 usuario.cadastraEvento(userEvent);
                                 userEvent.cadastraEvento();
