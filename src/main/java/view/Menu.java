@@ -30,8 +30,7 @@ public class Menu {
         System.out.println("1 - Visualizar o Calendario");
         System.out.println("2 - Visualizar seus Eventos");
         System.out.println("3 - Cadastrar um Evento");
-        System.out.println("4 - Configurações");
-        System.out.println("5 - Sair");
+        System.out.println("4 - Sair");
     }
 
     public void imprimeCalendario(int ano) {
@@ -156,6 +155,5 @@ public class Menu {
         System.out.println(mesAnalisado.getDia(diaDoEvento-1));
     }
 
-    public void imprimeInterfaceConfiguracoes() {
-    }
+
 }
